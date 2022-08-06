@@ -7,7 +7,9 @@
 #         print(positionStr)
 # except KeyboardInterrupt:
 #     print('\n')
+import time
+
 import pyautogui
 
-button7location = pyautogui.locateOnScreen('twitch-button.PNG')
-print(button7location)
+t = time.strftime("%I:%M %p")
+print(t)

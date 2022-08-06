@@ -8,7 +8,7 @@ from PIL import ImageGrab
 from functools import partial
 
 ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
-
+# End of reddit awesomeness to support multiple monitors
 
 def find_button(button_name):
     button = pyautogui.locateOnScreen(button_name, confidence=0.8)
@@ -18,7 +18,7 @@ def find_button(button_name):
         return button
 
 
-DELAY = 10 * 60  # Time to wait before clicking
+DELAY = 14 * 60  # Time to wait before clicking (this is set for a non-sub)
 TIMES_CLICKED = 0
 BUTTON_FILENAME = "twitch-button.png"  # File to use when looking for button to click
 while True:
@@ -26,7 +26,7 @@ while True:
 
     claim_button = find_button(BUTTON_FILENAME)
     if claim_button:
-        current_time = time.strftime("%H:%M%p", time.localtime())
+        current_time = time.strftime("%I:%M %p", time.localtime())
         print("Claim button found!")
 
         claim_center = pyautogui.center(claim_button)
