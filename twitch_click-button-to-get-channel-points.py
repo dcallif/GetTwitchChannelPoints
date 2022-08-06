@@ -18,9 +18,9 @@ def find_button(button_name):
         return button
 
 
-DELAY = 360  # Time to wait before clicking (5 minutes)
+DELAY = 10 * 60  # Time to wait before clicking
 TIMES_CLICKED = 0
-BUTTON_FILENAME = "twitch-button.png"
+BUTTON_FILENAME = "twitch-button.png"  # File to use when looking for button to click
 while True:
     x, y = pyautogui.position()  # Get current location of mouse cursor
 
@@ -38,6 +38,6 @@ while True:
         print("Collected channel points", TIMES_CLICKED, "time(s). Last time collected at", current_time)
         time.sleep(DELAY)
     else:
-        print("Claim button not found...waiting 9s before retrying click.")
-        time.sleep(9)
+        print("Claim button not found...waiting 10s before retrying click.")
+        time.sleep(10)
         find_button(BUTTON_FILENAME)
